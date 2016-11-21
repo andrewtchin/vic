@@ -121,15 +121,14 @@ func (v *Validator) checkPortGroups(input *data.Data, ips map[string][]data.Netw
 		"management": &input.ManagementNetwork,
 	} {
 		if n.Name == input.PublicNetwork.Name && !n.Empty() {
-			log.Errorf("%s network shares port group with public network, but has static IP configuration", nn)
-			log.Errorf("To resolve this, configure static IP for public network and assign %s network to same port group", nn)
-			log.Error("The static IP will be automatically configured for networks sharing the port group")
+			log.Errorf("Network roles %s and public share an interface", nn)
+			log.Error("Use the --public-network-x options for configuring the shared interface")
 			shared = true
 		}
 	}
 
 	if shared {
-		return fmt.Errorf("Static IP on network sharing port group with public network - Configuration ONLY allowed through public network options")
+		return fmt.Errorf("Configuration ONLY allowed through --public-network-x options for network roles sharing interface with public")
 	}
 
 	for pg, config := range ips {
