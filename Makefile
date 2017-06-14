@@ -26,7 +26,6 @@ TAG :=$(shell git for-each-ref --format="%(refname:short)" --sort=-authordate --
 TAG_NUM :=$(shell git for-each-ref --format="%(refname:short)" --sort=-authordate --count=1 refs/tags | cut -c 2-) # e.g. `0.9.0`
 
 BASE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-BASE_PKG := github.com/vmware/vic/
 
 BIN ?= bin
 IGNORE := $(shell mkdir -p $(BIN))
