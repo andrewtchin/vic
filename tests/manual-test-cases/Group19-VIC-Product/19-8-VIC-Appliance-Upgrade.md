@@ -1,8 +1,8 @@
-Test 19-8 VIC 1.2 Upgrade from 1.1.0 or 1.1.1
+Test 19-8 VIC Appliance Upgrade
 =======
 
 # Purpose:
-To verify VIC 1.2 upgrade from 1.1.0 or 1.1.1 works and provides access to all of the vSphere Integrated Containers components.
+To verify all valid VIC Appliance upgrade paths.
 
 # References:
 [VIC 1.2 Upgrade](TBD - waiting on official docs to link)
